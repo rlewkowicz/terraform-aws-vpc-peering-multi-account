@@ -1,8 +1,3 @@
-variable "accepter_aws_assume_role_arn" {
-  description = "Accepter AWS Assume Role ARN"
-  type        = "string"
-}
-
 variable "accepter_region" {
   type        = "string"
   description = "Accepter AWS region"
@@ -30,10 +25,6 @@ provider "aws" {
   alias   = "accepter"
   region  = "${var.accepter_region}"
   version = ">= 1.25"
-
-  assume_role {
-    role_arn = "${var.accepter_aws_assume_role_arn}"
-  }
 }
 
 locals {
